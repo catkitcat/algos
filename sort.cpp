@@ -12,7 +12,7 @@ using namespace std;
 \param [in] data The data set that will be searched
 \returns location of key if found or -1 if not found
 */
-int linearSearch(auto data, auto key)//prototype
+/*int linearSearch(auto data, auto key)//prototype
 {	
 	for (int i=0; i < data.size(); i++)
 	{
@@ -22,7 +22,20 @@ int linearSearch(auto data, auto key)//prototype
 		}
 	}
 	return -1;
-}
+}*/
+
+    void bubbleSort(auto& Data) 
+    {
+		for (int k = 1; k < Data.size(); k++)
+			for (int i = 0; i < Data.size() -1 -k; i++)
+				if (Data[i] > Data[i +1])
+				{
+					//pre-defined swap function
+					
+					swap(Data[i], Data[i + 1]); 
+				} //end if
+	} //end function
+
 
 int main()
 {
@@ -49,14 +62,14 @@ int main()
       cout<<endl<<"No input received, quiting..."<<endl<<endl;
        exit(1);//nothing to do but quit program
   }
- 
-   cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
-  cout<<"Enter a value to search for: ";
+  bubbleSort(inputs);
+   //cout<<endl<<"To end input type the #-character (followed by Enter)"<<endl<<endl;
+  /*cout<<"Enter a value to search for: ";
 
 
    cin>>search_key;
  
-    /*while(search_key != "#")//perform searches until sentinel entered
+    while(search_key != "#")//perform searches until sentinel entered
     {
         result = linearSearch(inputs,search_key);
 
@@ -71,17 +84,8 @@ int main()
         cout<<endl<<endl<<"Enter a value to search for: ";
         cin>>search_key; 
     }*/
-    void bubbleSort(auto& Data) {
-		for (int k = 1; k < Data.size(); k++)
-			for (int i = 0; i < Data.size() -1 -k; i++)
-				if (Data[i] > Data[i +1]){
-					//pre-defined swap function
-					
-					swap(Data[i], Data[i + 1]); 
-				} //end if
-	} //end function
 
-   cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
+   //cout<<endl<<"Program \"search it\" is now finished."<<endl<<endl;
 
     return 0;
 }
